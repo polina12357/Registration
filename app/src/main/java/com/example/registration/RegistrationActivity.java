@@ -6,8 +6,16 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -18,6 +26,10 @@ public class RegistrationActivity extends FragmentActivity {
     private FragmentStateAdapter pagerAdapter;
 
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +38,11 @@ public class RegistrationActivity extends FragmentActivity {
         viewPager = findViewById(R.id.pager);
         pagerAdapter = new ScreenSlidePagerAdapter(this);
         viewPager.setAdapter(pagerAdapter);
+
+
+
+
+
     }
 
 
@@ -49,9 +66,9 @@ public class RegistrationActivity extends FragmentActivity {
                 case 0:
                     return new StartFragment();
                 case 1:
-                    return new RegistrationChooseGenderFragment();
-                case 2:
                     return new RegistrationNameFragment();
+                case 2:
+                    return new RegistrationChooseGenderFragment();
                 case 3:
                     return new RegistrationPhysiqueFragment();
                 case 4:

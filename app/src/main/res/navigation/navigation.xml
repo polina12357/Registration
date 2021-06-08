@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.registration.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_registrationNameFragment"
+            app:destination="@id/registrationNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationNameFragment"
+        android:name="com.example.registration.RegistrationNameFragment"
+        android:label="fragment_registration_name"
+        tools:layout="@layout/fragment_registration_name" >
+        <action
+            android:id="@+id/action_registrationNameFragment_to_registrationChooseGenderFragment"
+            app:destination="@id/registrationChooseGenderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.registration.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
+    <fragment
+        android:id="@+id/registrationChooseGenderFragment"
+        android:name="com.example.registration.RegistrationChooseGenderFragment"
+        android:label="fragment_registration_choose_gender"
+        tools:layout="@layout/fragment_registration_choose_gender" >
+        <action
+            android:id="@+id/action_registrationChooseGenderFragment_to_registrationPhysiqueFragment"
+            app:destination="@id/registrationPhysiqueFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationPhysiqueFragment"
+        android:name="com.example.registration.RegistrationPhysiqueFragment"
+        android:label="fragment_registration_physique"
+        tools:layout="@layout/fragment_registration_physique" >
+        <action
+            android:id="@+id/action_registrationPhysiqueFragment_to_registrationChooseActivityLevelFragment"
+            app:destination="@id/registrationChooseActivityLevelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationChooseGoalFragment"
+        android:name="com.example.registration.RegistrationChooseGoalFragment"
+        android:label="fragment_registration_choose_activity_level"
+        tools:layout="@layout/fragment_registration_choose_activity_level" >
+        <action
+            android:id="@+id/action_registrationChooseGoalFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationChooseActivityLevelFragment"
+        android:name="com.example.registration.RegistrationChooseActivityLevelFragment"
+        android:label="RegistrationChooseActivityLevelFragment" >
+        <action
+            android:id="@+id/action_registrationChooseActivityLevelFragment_to_registrationChooseGoalFragment"
+            app:destination="@id/registrationChooseGoalFragment" />
+    </fragment>
+</navigation>

@@ -7,14 +7,55 @@
     android:layout_height="match_parent"
     tools:context=".RegistrationPhysiqueFragment">
 
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_bar"
+        app:trackColor="@color/firstMenuIconColor"
+        app:indicatorColor="@color/white"
+        app:trackThickness="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:progress="45"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/more_information"
+        style="@style/menuLeft"
+        android:layout_width="280dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/roboto"
+                android:text="Tell us more about yourself"
+                android:textColor="@color/black"
+                android:textSize="36sp" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/physique_card"
         style="@style/menuLeft"
-        android:layout_width="280dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="155dp"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="180dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@id/more_information">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -24,9 +65,10 @@
                 android:id="@+id/specify_age"
                 android:layout_width="245dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:elevation="4dp"
-                android:hint="@string/birthday_hint"
+                android:hint="Age"
+
                 app:boxBackgroundColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -35,8 +77,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/registration_input_age"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:inputType="textPersonName"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+
                     app:prefixText="@string/name_hint" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -45,7 +88,7 @@
                 android:id="@+id/specify_height"
                 android:layout_width="245dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="30dp"
                 android:elevation="4dp"
                 android:hint="@string/height_hint"
                 app:boxBackgroundColor="@color/white"
@@ -56,8 +99,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/registration_input_height"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:inputType="textPersonName"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
                     app:prefixText="@string/name_hint" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -67,7 +110,7 @@
                 android:layout_width="245dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginBottom="20dp"
                 android:elevation="4dp"
                 android:hint="@string/weight_hint"
                 app:boxBackgroundColor="@color/white"
@@ -79,8 +122,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/registration_input_weight"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:inputType="textPersonName"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
                     app:prefixText="@string/name_hint" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -90,7 +133,6 @@
 
 
     </com.google.android.material.card.MaterialCardView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
